@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spettacoli - Grilli in Testa</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<header>
+		<div w3-include-html="navbar.html"></div>
+	</header>
+
+	<main class="performances-page">
+		<section class="page-header">
+			<h1>I Nostri Spettacoli</h1>
+			<p>Scopri tutti gli spettacoli in programma della compagnia Grilli in Testa</p>
+		</section>
+
+		<section class="performance-calendar">
+			<h2>Calendario</h2>
+			<div class="calendar-filters">
+				<select id="season-filter">
+					<option value="2023-2024">Stagione 2023-2024</option>
+					<option value="2022-2023">Stagione 2022-2023</option>
+				</select>
+				<button class="filter-btn">Filtra</button>
+			</div>
+		</section>
+
+		<section class="performances-list">
+			<article class="performance-card">
+				<div class="performance-image">
+					<img src="assets/placeholder-performance.jpg" alt="Nome Spettacolo">
+				</div>
+				<div class="performance-info">
+					<h3>Il Nome del Vento</h3>
+					<p class="performance-date"><i class="far fa-calendar-alt"></i> 15 Dicembre 2023</p>
+					<p class="performance-time"><i class="far fa-clock"></i> 21:00</p>
+					<p class="performance-location"><i class="fas fa-map-marker-alt"></i> Teatro Comunale</p>
+					<p class="performance-description">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.
+						Vivamus hendrerit arcu sed erat molestie vehicula.
+					</p>
+					<a href="#" class="cta">Acquista Biglietti</a>
+				</div>
+			</article>
+
+			<article class="performance-card">
+				<div class="performance-image">
+					<img src="assets/placeholder-performance.jpg" alt="Nome Spettacolo">
+				</div>
+				<div class="performance-info">
+					<h3>La Tempesta</h3>
+					<p class="performance-date"><i class="far fa-calendar-alt"></i> 22 Gennaio 2024</p>
+					<p class="performance-time"><i class="far fa-clock"></i> 20:30</p>
+					<p class="performance-location"><i class="fas fa-map-marker-alt"></i> Auditorium San Francesco</p>
+					<p class="performance-description">
+						Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+						Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+					</p>
+					<a href="#" class="cta">Acquista Biglietti</a>
+				</div>
+			</article>
+
+			<article class="performance-card">
+				<div class="performance-image">
+					<img src="assets/placeholder-performance.jpg" alt="Nome Spettacolo">
+				</div>
+				<div class="performance-info">
+					<h3>Sogno di Una Notte di Mezza Estate</h3>
+					<p class="performance-date"><i class="far fa-calendar-alt"></i> 15 Marzo 2024</p>
+					<p class="performance-time"><i class="far fa-clock"></i> 21:00</p>
+					<p class="performance-location"><i class="fas fa-map-marker-alt"></i> Teatro Comunale</p>
+					<p class="performance-description">
+						Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit
+						sit amet non magna.
+					</p>
+					<a href="#" class="cta">Acquista Biglietti</a>
+				</div>
+			</article>
+		</section>
+
+		<section class="past-performances">
+			<h2>Spettacoli Passati</h2>
+			<div class="past-performances-grid">
+				<div class="past-performance">
+					<img src="assets/placeholder-small.jpg" alt="Spettacolo Passato">
+					<h4>Romeo e Giulietta</h4>
+					<p>Novembre 2022</p>
+				</div>
+				<div class="past-performance">
+					<img src="assets/placeholder-small.jpg" alt="Spettacolo Passato">
+					<h4>Il Malato Immaginario</h4>
+					<p>Marzo 2022</p>
+				</div>
+				<div class="past-performance">
+					<img src="assets/placeholder-small.jpg" alt="Spettacolo Passato">
+					<h4>Aspettando Godot</h4>
+					<p>Gennaio 2022</p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 Grilli in Testa - Associazione Culturale</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

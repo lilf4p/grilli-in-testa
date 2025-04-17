@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>News - Grilli in Testa</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<header>
+		<div w3-include-html="navbar.html"></div>
+	</header>
+
+	<main class="news-page">
+		<section class="page-header">
+			<h1>News ed Eventi</h1>
+			<p>Rimani aggiornato sulle ultime novità e gli eventi della compagnia</p>
+		</section>
+
+		<section class="news-filter">
+			<div class="search-sort">
+				<input type="text" placeholder="Cerca notizie..." class="search-input">
+				<select class="sort-select">
+					<option value="recent">Più recenti</option>
+					<option value="oldest">Più vecchi</option>
+					<option value="title">Titolo (A-Z)</option>
+				</select>
+			</div>
+		</section>
+
+		<section class="news-grid">
+			<article class="news-card">
+				<div class="news-image">
+					<img src="assets/placeholder-news.jpg" alt="Nuova Produzione">
+				</div>
+				<div class="news-content">
+					<span class="news-date"><i class="far fa-calendar-alt"></i> 10 Novembre 2023</span>
+					<h3>Nuova Produzione in Arrivo</h3>
+					<p>Siamo entusiasti di annunciare che stiamo lavorando a una nuova produzione che debutterà la
+						prossima primavera...</p>
+					<a href="#" class="read-more">Leggi tutto <i class="fas fa-arrow-right"></i></a>
+				</div>
+			</article>
+
+			<article class="news-card">
+				<div class="news-image">
+					<img src="assets/placeholder-news.jpg" alt="Workshop">
+				</div>
+				<div class="news-content">
+					<span class="news-date"><i class="far fa-calendar-alt"></i> 28 Ottobre 2023</span>
+					<h3>Workshop di Recitazione</h3>
+					<p>Il prossimo mese ospiteremo un workshop intensivo di recitazione tenuto dal rinomato regista
+						Marco Verdi...</p>
+					<a href="#" class="read-more">Leggi tutto <i class="fas fa-arrow-right"></i></a>
+				</div>
+			</article>
+
+			<article class="news-card">
+				<div class="news-image">
+					<img src="assets/placeholder-news.jpg" alt="Nuovo Corso">
+				</div>
+				<div class="news-content">
+					<span class="news-date"><i class="far fa-calendar-alt"></i> 15 Ottobre 2023</span>
+					<h3>Aperte le Iscrizioni ai Nuovi Corsi</h3>
+					<p>Sono ufficialmente aperte le iscrizioni per i corsi della stagione 2023-2024. Quest'anno offriamo
+						numerose novità...</p>
+					<a href="#" class="read-more">Leggi tutto <i class="fas fa-arrow-right"></i></a>
+				</div>
+			</article>
+
+			<article class="news-card">
+				<div class="news-image">
+					<img src="assets/placeholder-news.jpg" alt="Premio">
+				</div>
+				<div class="news-content">
+					<span class="news-date"><i class="far fa-calendar-alt"></i> 5 Ottobre 2023</span>
+					<h3>Premio Miglior Spettacolo Emergente</h3>
+					<p>Il nostro spettacolo "La Notte delle Stelle" ha ricevuto il prestigioso premio come Miglior
+						Spettacolo Emergente...</p>
+					<a href="#" class="read-more">Leggi tutto <i class="fas fa-arrow-right"></i></a>
+				</div>
+			</article>
+		</section>
+
+		<div class="pagination">
+			<button class="page-btn active">1</button>
+			<button class="page-btn">2</button>
+			<button class="page-btn">3</button>
+			<button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 Grilli in Testa - Associazione Culturale</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
