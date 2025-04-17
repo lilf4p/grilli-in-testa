@@ -84,7 +84,7 @@ header {
 }
 
 .nav-links a:hover {
-    color: green;
+    color: rgba(44, 171, 102);
 }
 
 .burger {
@@ -211,7 +211,7 @@ header {
 
 .social-icons a {
     color: black;
-    font-size: 1rem;
+    font-size: 1.2rem;
     /* Increased size */
     transition: color 0.3s ease;
 }
@@ -336,14 +336,14 @@ header {
 
 .news-content h3 {
     margin: 0.5rem 0;
-    color: green;
+    color: rgba(44, 171, 102);
     font-family: 'Saira Semi Condensed', sans-serif;
 }
 
 .read-more {
     display: inline-block;
     margin-top: 1rem;
-    color: green;
+    color: rgba(44, 171, 102);
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -361,8 +361,8 @@ header {
 
 .page-btn {
     background: white;
-    border: 1px solid green;
-    color: green;
+    border: 1px solid rgba(44, 171, 102);
+    color: rgba(44, 171, 102);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -373,7 +373,7 @@ header {
 
 .page-btn.active,
 .page-btn:hover {
-    background: green;
+    background: rgba(44, 171, 102);
     color: white;
 }
 
@@ -396,7 +396,7 @@ header {
 }
 
 .about-content h2 {
-    color: green;
+    color: rgba(44, 171, 102);
     margin-bottom: 1.5rem;
     font-family: 'Saira Semi Condensed', sans-serif;
 }
@@ -438,7 +438,7 @@ header {
 .vision i,
 .values i {
     font-size: 2.5rem;
-    color: green;
+    color: rgba(44, 171, 102);
     margin-bottom: 1rem;
 }
 
@@ -455,7 +455,7 @@ header {
 }
 
 .team-section h2 {
-    color: green;
+    color: rgba(44, 171, 102);
     margin-bottom: 2rem;
     font-family: 'Saira Semi Condensed', sans-serif;
 }
@@ -483,7 +483,7 @@ header {
 
 .member-role {
     display: block;
-    color: green;
+    color: rgba(44, 171, 102);
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
@@ -498,7 +498,7 @@ header {
 
 .join-us h2 {
     margin-bottom: 1rem;
-    color: green;
+    color: rgba(44, 171, 102);
     font-family: 'Saira Semi Condensed', sans-serif;
 }
 
@@ -550,13 +550,13 @@ header {
 
 .cta-alt:hover {
     background: white;
-    color: green;
+    color: rgba(44, 171, 102);
 }
 
 .featured-sections {
     display: flex;
     justify-content: space-between;
-    padding: 5rem 2rem;
+    padding: 8rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
     gap: 2rem;
@@ -578,7 +578,7 @@ header {
 
 .feature-icon {
     font-size: 3rem;
-    color: green;
+    color: rgba(44, 171, 102);
     margin-bottom: 1.5rem;
 }
 
@@ -592,7 +592,7 @@ header {
 }
 
 .feature-link {
-    color: green;
+    color: rgba(44, 171, 102);
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -610,7 +610,7 @@ header {
 
 .upcoming-events h2 {
     margin-bottom: 3rem;
-    color: green;
+    color: rgba(44, 171, 102);
     font-family: 'Saira Semi Condensed', sans-serif;
 }
 
@@ -631,7 +631,7 @@ header {
 }
 
 .event-date {
-    background: green;
+    background: rgba(44, 171, 102);
     color: white;
     padding: 1rem;
     display: flex;
@@ -663,7 +663,7 @@ header {
 .event-link {
     display: inline-block;
     margin-top: 1rem;
-    color: green;
+    color: rgba(44, 171, 102);
     text-decoration: none;
     font-weight: bold;
 }
@@ -677,7 +677,7 @@ header {
 
 .testimonials h2 {
     margin-bottom: 3rem;
-    color: green;
+    color: rgba(44, 171, 102);
     font-family: 'Saira Semi Condensed', sans-serif;
 }
 
@@ -703,7 +703,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    color: rgba(0, 128, 0, 0.2);
+    color: rgba(44, 171, 102, 0.2);
     font-size: 1.5rem;
 }
 
@@ -711,7 +711,7 @@ header {
     position: absolute;
     bottom: 0;
     right: 0;
-    color: rgba(0, 128, 0, 0.2);
+    color: rgba(44, 171, 102, 0.2);
     font-size: 1.5rem;
 }
 
@@ -724,7 +724,7 @@ header {
 .join-community {
     text-align: center;
     padding: 5rem 2rem;
-    background: linear-gradient(rgba(0, 128, 0, 0.8), rgba(0, 128, 0, 0.8)), url('assets/community-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(44, 171, 102, 0.8), rgba(44, 171, 102, 0.8)), url('assets/community-bg.jpg') center/cover no-repeat;
     color: white;
 }
 
@@ -755,7 +755,7 @@ header {
 
 .page-header h1 {
     font-size: 3rem;
-    color: green;
+    color: rgba(44, 171, 102);
     margin-bottom: 1rem;
     font-family: 'Saira Semi Condensed', sans-serif;
     text-transform: uppercase;
@@ -775,8 +775,8 @@ header {
 
 .filter-btn {
     background-color: white;
-    border: 2px solid green;
-    color: green;
+    border: 2px solid rgba(44, 171, 102);
+    color: rgba(44, 171, 102);
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
     cursor: pointer;
@@ -787,7 +787,7 @@ header {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: green;
+    background-color: rgba(44, 171, 102);
     color: white;
 }
 
@@ -824,7 +824,7 @@ header {
 .course-info h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: green;
+    color: rgba(44, 171, 102);
     font-family: 'Saira Semi Condensed', sans-serif;
 }
 
@@ -862,7 +862,7 @@ header {
 .past-performances h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: green;
+    color: rgba(44, 171, 102);
 }
 
 .past-performances-grid {
@@ -980,7 +980,7 @@ header {
 .membership-types h2,
 .member-testimonials h2,
 .membership-form h2 {
-    color: green;
+    color: rgba(44, 171, 102);
     margin-bottom: 2rem;
     font-family: 'Saira Semi Condensed', sans-serif;
     text-transform: uppercase;
@@ -1008,7 +1008,7 @@ header {
 
 .benefit-icon {
     font-size: 2.5rem;
-    color: green;
+    color: rgba(44, 171, 102);
     margin-bottom: 1.5rem;
 }
 
@@ -1041,14 +1041,14 @@ header {
 .membership-option.featured {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    border: 2px solid green;
+    border: 2px solid rgba(44, 171, 102);
 }
 
 .popular-tag {
     position: absolute;
     top: -15px;
     right: 20px;
-    background: green;
+    background: rgba(44, 171, 102);
     color: white;
     padding: 5px 10px;
     border-radius: 20px;
@@ -1060,7 +1060,7 @@ header {
     font-size: 1.8rem;
     font-weight: bold;
     margin: 1rem 0;
-    color: green;
+    color: rgba(44, 171, 102);
 }
 
 .note {
@@ -1084,7 +1084,7 @@ header {
 
 .membership-option ul li:before {
     content: "✓";
-    color: green;
+    color: rgba(44, 171, 102);
     position: absolute;
     left: 0;
 }
@@ -1173,4 +1173,45 @@ header {
     .benefit-card {
         margin-bottom: 1rem;
     }
+}
+
+/* Page Transition Styles */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+}
+
+.page-transition.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-transition.fade-out {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+body.page-transitioning {
+    overflow: hidden;
+}
+
+/* Adding fade-in animation for page content */
+main {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+main.loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
