@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (burger && navLinks) {
 			burger.addEventListener('click', () => {
 				navLinks.classList.toggle('active');
+				document.body.classList.toggle('menu-open');
 				console.log('Burger clicked, toggled active class');
 			});
 		} else {

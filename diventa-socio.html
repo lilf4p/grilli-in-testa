@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Diventa Socio - Grilli in Testa</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<header>
+		<div w3-include-html="navbar.html"></div>
+	</header>
+
+	<main>
+		<section class="page-header">
+			<h1>Diventa Socio</h1>
+			<p>Unisciti alla nostra associazione culturale e fai parte di una comunità appassionata di arte e teatro</p>
+		</section>
+
+		<section class="membership-benefits">
+			<h2>Vantaggi</h2>
+			<div class="benefits-container">
+				<div class="benefit-card">
+					<div class="benefit-icon">
+						<i class="fas fa-ticket-alt"></i>
+					</div>
+					<h3>Sconti sugli Spettacoli</h3>
+					<p>Biglietti ridotti per tutti i nostri spettacoli e produzioni teatrali</p>
+				</div>
+
+				<div class="benefit-card">
+					<div class="benefit-icon">
+						<i class="fas fa-chalkboard-teacher"></i>
+					</div>
+					<h3>Priorità sui Corsi</h3>
+					<p>Priorità di iscrizione e tariffe agevolate su tutti i corsi formativi</p>
+				</div>
+
+				<div class="benefit-card">
+					<div class="benefit-icon">
+						<i class="fas fa-glass-cheers"></i>
+					</div>
+					<h3>Eventi Esclusivi</h3>
+					<p>Inviti ad eventi speciali riservati ai soci e incontri con gli artisti</p>
+				</div>
+
+				<div class="benefit-card">
+					<div class="benefit-icon">
+						<i class="fas fa-users"></i>
+					</div>
+					<h3>Comunità</h3>
+					<p>Fai parte di una comunità che condivide la tua stessa passione per l'arte e la cultura</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="membership-types">
+			<h2>Tipologie di Associazione</h2>
+			<div class="membership-options">
+				<div class="membership-option">
+					<h3>Socio Ordinario</h3>
+					<div class="price">25€/anno</div>
+					<ul>
+						<li>Sconto del 15% sugli spettacoli</li>
+						<li>Sconto del 10% sui corsi</li>
+						<li>Newsletter mensile</li>
+						<li>Partecipazione agli eventi sociali</li>
+					</ul>
+					<a href="#form" class="cta">Iscriviti</a>
+				</div>
+
+				<div class="membership-option featured">
+					<div class="popular-tag">Più popolare</div>
+					<h3>Socio Sostenitore</h3>
+					<div class="price">50€/anno</div>
+					<ul>
+						<li>Sconto del 25% sugli spettacoli</li>
+						<li>Sconto del 20% sui corsi</li>
+						<li>Newsletter mensile</li>
+						<li>Partecipazione agli eventi sociali</li>
+						<li>Invito alle anteprime</li>
+						<li>Gadget esclusivo</li>
+					</ul>
+					<a href="#form" class="cta">Iscriviti</a>
+				</div>
+
+				<div class="membership-option">
+					<h3>Socio Giovane</h3>
+					<div class="price">15€/anno</div>
+					<div class="note">(fino a 25 anni)</div>
+					<ul>
+						<li>Sconto del 20% sugli spettacoli</li>
+						<li>Sconto del 15% sui corsi</li>
+						<li>Newsletter mensile</li>
+						<li>Partecipazione agli eventi sociali</li>
+					</ul>
+					<a href="#form" class="cta">Iscriviti</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="member-testimonials">
+			<h2>Le Voci dei Nostri Soci</h2>
+			<div class="testimonial-container">
+				<div class="testimonial">
+					<div class="quote">
+						<i class="fas fa-quote-left"></i>
+						<p>Essere socio di Grilli in Testa mi ha aperto un mondo! Ho conosciuto persone fantastiche e ho
+							riscoperto il piacere del teatro.</p>
+						<i class="fas fa-quote-right"></i>
+					</div>
+					<div class="author">- Marco L., socio dal 2018</div>
+				</div>
+
+				<div class="testimonial">
+					<div class="quote">
+						<i class="fas fa-quote-left"></i>
+						<p>Gli eventi esclusivi per soci sono sempre stimolanti e mi permettono di vivere il teatro da
+							una prospettiva privilegiata.</p>
+						<i class="fas fa-quote-right"></i>
+					</div>
+					<div class="author">- Lucia G., socia dal 2020</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="form" class="membership-form">
+			<h2>Modulo di Iscrizione</h2>
+			<p>Compila il modulo sottostante per richiedere l'iscrizione. Ti contatteremo al più presto con le
+				istruzioni per completare la procedura.</p>
+
+			<form action="#" method="POST" class="contact-form">
+				<div class="form-group">
+					<label for="nome">Nome*</label>
+					<input type="text" id="nome" name="nome" required>
+				</div>
+
+				<div class="form-group">
+					<label for="cognome">Cognome*</label>
+					<input type="text" id="cognome" name="cognome" required>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Email*</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+
+				<div class="form-group">
+					<label for="telefono">Telefono</label>
+					<input type="tel" id="telefono" name="telefono">
+				</div>
+
+				<div class="form-group">
+					<label for="tipo-socio">Tipo di Socio*</label>
+					<select id="tipo-socio" name="tipo-socio" required>
+						<option value="">Seleziona una opzione</option>
+						<option value="ordinario">Socio Ordinario</option>
+						<option value="sostenitore">Socio Sostenitore</option>
+						<option value="giovane">Socio Giovane</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="messaggio">Note aggiuntive</label>
+					<textarea id="messaggio" name="messaggio" rows="4"></textarea>
+				</div>
+
+				<div class="form-group checkbox">
+					<input type="checkbox" id="privacy" name="privacy" required>
+					<label for="privacy">Acconsento al trattamento dei dati personali secondo la normativa
+						vigente*</label>
+				</div>
+
+				<button type="submit" class="cta">Invia Richiesta</button>
+				<p class="form-note">* Campi obbligatori</p>
+			</form>
+		</section>
+
+		<section class="cta-section">
+			<h2>Hai domande?</h2>
+			<p>Contattaci per maggiori informazioni sul tesseramento e sulle attività dell'associazione</p>
+			<a href="contatti.html" class="cta">Contattaci</a>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 Grilli in Testa - Associazione Culturale</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
