@@ -4,6 +4,55 @@ script.src = 'https://kit.fontawesome.com/a076d05399.js';
 script.crossOrigin = 'anonymous';
 document.head.appendChild(script);
 
+// Fetch content from API and update page elements
+function fetchAndUpdateContent() {
+	const requestOptions = {
+		method: "GET",
+		redirect: "follow"
+	};
+
+	fetch("http://localhost:1337/api/about?populate=*", requestOptions)
+		.then((response) => response.json())
+		.then((result) => {
+			console.log("API data received:", result);
+			// Check the exact structure of the response
+			if (result && result.data && result.data) {
+				updatePageContent(result.data);
+			}
+		})
+		.catch((error) => console.error("Error fetching content:", error));
+}
+
+// Update page content with data from API
+function updatePageContent(content) {
+	console.log("Updating content with:", content);
+
+	// Update main headline if available
+	if (content.title) {
+		const mainHeading = document.querySelector('.hero h1');
+		if (mainHeading) {
+			console.log("Updating main heading to:", content.title);
+			mainHeading.textContent = content.title;
+		} else {
+			console.log("Main heading element not found");
+		}
+	}
+
+	// Update hero description if available
+	if (content.description) {
+		const heroDesc = document.querySelector('.hero p');
+		if (heroDesc) {
+			console.log("Updating description to:", content.description);
+			heroDesc.textContent = content.description;
+		} else {
+			console.log("Description element not found");
+		}
+	}
+
+	// The rest of the function remains the same
+	// This can be expanded based on what data is available in the API
+}
+
 function w3IncludeHTML() {
 	var z, i, elmnt, file, xhttp;
 	/* Loop through a collection of all HTML elements: */
@@ -115,28 +164,39 @@ function handlePageLoad() {
 document.addEventListener('DOMContentLoaded', () => {
 	w3IncludeHTML();
 
-	// Wait a moment for the included HTML to load
-	setTimeout(() => {
-		// Ensure the navbar toggle functionality is initialized
-		const burger = document.querySelector('.burger');
-		const navLinks = document.querySelector('.nav-links');
+	// First wait for the included HTML elements to be loaded
+	const checkIncludesLoaded = setInterval(() => {
+		// If no more elements with w3-include-html attribute exist, all includes are loaded
+		if (!document.querySelector('[w3-include-html]')) {
+			clearInterval(checkIncludesLoaded);
 
-		if (burger && navLinks) {
-			burger.addEventListener('click', () => {
-				navLinks.classList.toggle('active');
-				document.body.classList.toggle('menu-open');
-				console.log('Burger clicked, toggled active class');
-			});
-		} else {
-			console.error('Burger menu or nav links not found');
+			console.log('All HTML includes are loaded, initializing page...');
+
+			// Initialize burger menu
+			const burger = document.querySelector('.burger');
+			const navLinks = document.querySelector('.nav-links');
+
+			if (burger && navLinks) {
+				burger.addEventListener('click', () => {
+					navLinks.classList.toggle('active');
+					document.body.classList.toggle('menu-open');
+					console.log('Burger clicked, toggled active class');
+				});
+			} else {
+				console.error('Burger menu or nav links not found');
+			}
+
+			// Initialize page transitions
+			initPageTransitions();
+
+			// Now fetch content from API once everything else is loaded
+			console.log('Fetching content from API...');
+			fetchAndUpdateContent();
+
+			// Handle page load transitions
+			handlePageLoad();
 		}
-
-		// Initialize page transitions after navbar is loaded
-		initPageTransitions();
-	}, 500);
-
-	// Handle page load transitions
-	handlePageLoad();
+	}, 100);
 });
 
 // Handle transitions when navigating with browser back/forward buttons
