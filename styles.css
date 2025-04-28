@@ -1225,3 +1225,139 @@ main.loaded {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Historical Figures Carousel */
+.historical-carousel {
+    padding: 60px 0;
+    background-color: #f8f5ff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.historical-carousel h2 {
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #5d4e8c;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    animation: carousel 60s linear infinite;
+    width: calc(350px * 10);
+    /* Card width * number of cards * 2 (for loop) */
+}
+
+.carousel-card {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 450px;
+    margin: 0 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.carousel-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(93, 78, 140, 0.3);
+}
+
+.card-image {
+    height: 400px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-caption {
+    background-color: #5d4e8c;
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    font-family: 'El Messiri', sans-serif;
+    font-size: 1.2em;
+}
+
+.quote-bubble {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 12px;
+    font-style: italic;
+    color: #333;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Dixit-Inspired Character Images */
+.dante {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url('https://placeholder.pics/svg/300x400/FFD78E-FFB0A8/5D4E8C-333333/Dante%20con%20grilli');
+    background-color: #FFD78E;
+}
+
+.leonardo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url('https://placeholder.pics/svg/300x400/A8E6FF-B8FFCB/5D4E8C-333333/Leonardo%20e%20i%20grilli');
+    background-color: #A8E6FF;
+}
+
+.marie {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url('https://placeholder.pics/svg/300x400/FFB3DA-D6A8FF/5D4E8C-333333/Marie%20con%20grilli%20luminosi');
+    background-color: #FFB3DA;
+}
+
+.shakespeare {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url('https://placeholder.pics/svg/300x400/B5EAEA-C3FF99/5D4E8C-333333/Shakespeare%20e%20grilli%20teatrali');
+    background-color: #B5EAEA;
+}
+
+.frida {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url('https://placeholder.pics/svg/300x400/FFD579-FF9EAA/5D4E8C-333333/Frida%20con%20grilli%20colorati');
+    background-color: #FFD579;
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-350px * 5));
+        /* Half the total width */
+    }
+}
+
+/* Ensure cards are visible on smaller screens */
+@media (max-width: 768px) {
+    .carousel-card {
+        width: 250px;
+        height: 375px;
+        margin: 0 15px;
+    }
+
+    .card-image {
+        height: 330px;
+    }
+
+    .quote-bubble {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+}

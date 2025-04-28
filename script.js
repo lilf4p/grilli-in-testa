@@ -161,6 +161,30 @@ function handlePageLoad() {
 	fadeInContent();
 }
 
+// Historical figures carousel functionality
+document.addEventListener("DOMContentLoaded", function () {
+	const track = document.querySelector('.carousel-track');
+
+	// Clone the cards to create a seamless infinite loop
+	if (track) {
+		const cards = Array.from(track.children);
+		const clones = cards.map(card => card.cloneNode(true));
+
+		clones.forEach(clone => {
+			track.appendChild(clone);
+		});
+
+		// Pause animation on hover for better readability
+		track.addEventListener('mouseenter', () => {
+			track.style.animationPlayState = 'paused';
+		});
+
+		track.addEventListener('mouseleave', () => {
+			track.style.animationPlayState = 'running';
+		});
+	}
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 	w3IncludeHTML();
 
