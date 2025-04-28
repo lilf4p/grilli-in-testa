@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Eventi - SanGiò APS</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<header>
+		<div w3-include-html="navbar.html"></div>
+	</header>
+
+	<main class="events-page">
+		<section class="page-header">
+			<h1>I Nostri Eventi</h1>
+			<p>Scopri tutti gli eventi ludico-sportivi e psicologici organizzati dall'associazione SanGiò</p>
+		</section>
+
+		<section class="event-calendar">
+			<h2>Calendario</h2>
+			<div class="calendar-filters">
+				<select id="season-filter">
+					<option value="2023-2024">Stagione 2023-2024</option>
+					<option value="2022-2023">Stagione 2022-2023</option>
+				</select>
+				<button class="filter-btn">Filtra</button>
+			</div>
+		</section>
+
+		<section class="events-list">
+			<article class="event-card">
+				<div class="event-image">
+					<img src="assets/placeholder-performance.jpg" alt="Evento Ludico">
+				</div>
+				<div class="event-info">
+					<h3>Giochi di Team Building all'Aperto</h3>
+					<p class="event-date"><i class="far fa-calendar-alt"></i> 15 Dicembre 2023</p>
+					<p class="event-time"><i class="far fa-clock"></i> 16:00</p>
+					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Parco Comunale</p>
+					<p class="event-description">
+						Una giornata dedicata ad attività ludiche all'aperto che favoriscono la collaborazione
+						e la comunicazione di gruppo. Adatto a famiglie e gruppi di amici di tutte le età.
+					</p>
+					<a href="#" class="cta">Prenota Posto</a>
+				</div>
+			</article>
+
+			<article class="event-card">
+				<div class="event-image">
+					<img src="assets/placeholder-performance.jpg" alt="Workshop Psicologico">
+				</div>
+				<div class="event-info">
+					<h3>Workshop sulla Comunicazione Empatica</h3>
+					<p class="event-date"><i class="far fa-calendar-alt"></i> 22 Gennaio 2024</p>
+					<p class="event-time"><i class="far fa-clock"></i> 18:30</p>
+					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Sala Conferenze</p>
+					<p class="event-description">
+						Un workshop interattivo per esplorare e migliorare le capacità di comunicazione empatica
+						attraverso giochi di ruolo e attività strutturate guidate da psicologi esperti.
+					</p>
+					<a href="#" class="cta">Prenota Posto</a>
+				</div>
+			</article>
+
+			<article class="event-card">
+				<div class="event-image">
+					<img src="assets/placeholder-performance.jpg" alt="Attività per Famiglie">
+				</div>
+				<div class="event-info">
+					<h3>Giornata delle Famiglie: Giochi e Benessere</h3>
+					<p class="event-date"><i class="far fa-calendar-alt"></i> 15 Marzo 2024</p>
+					<p class="event-time"><i class="far fa-clock"></i> 10:00</p>
+					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Centro Ricreativo</p>
+					<p class="event-description">
+						Un evento speciale dedicato alle famiglie con bambini, con attività ludiche che promuovono la
+						cooperazione e il dialogo intergenerazionale. Include laboratori creativi e momenti di
+						riflessione.
+					</p>
+					<a href="#" class="cta">Prenota Posto</a>
+				</div>
+			</article>
+		</section>
+
+		<section class="past-events">
+			<h2>Eventi Passati</h2>
+			<div class="past-events-grid">
+				<div class="past-event">
+					<img src="assets/placeholder-small.jpg" alt="Evento Passato">
+					<h4>Giornata Mondiale del Gioco</h4>
+					<p>Novembre 2022</p>
+				</div>
+				<div class="past-event">
+					<img src="assets/placeholder-small.jpg" alt="Evento Passato">
+					<h4>Workshop sulla Gestione dei Conflitti</h4>
+					<p>Marzo 2022</p>
+				</div>
+				<div class="past-event">
+					<img src="assets/placeholder-small.jpg" alt="Evento Passato">
+					<h4>Torneo di Giochi Cooperativi</h4>
+					<p>Gennaio 2022</p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2025 A.P.S. GRILLI IN TESTA</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

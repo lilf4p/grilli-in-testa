@@ -98,7 +98,7 @@ function initPageTransitions() {
 	}
 
 	// Get all links that lead to internal pages
-	const internalLinks = document.querySelectorAll('a[href^="./"], a[href^="/"], a[href^="index.html"], a[href^="spettacoli.html"], a[href^="corsi.html"], a[href^="news.html"], a[href^="chi-siamo.html"], a[href^="diventa-socio.html"]');
+	const internalLinks = document.querySelectorAll('a[href^="./"], a[href^="/"], a[href^="index.html"], a[href^="news.html"], a[href^="chi-siamo.html"], a[href^="diventa-socio.html"]');
 
 	// Add click event to each internal link
 	internalLinks.forEach(link => {

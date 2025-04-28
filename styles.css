@@ -509,7 +509,7 @@ header {
 /* Home Page Styles */
 .hero {
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/hero-bg.jpg') center/cover no-repeat;
+    background-color: rgba(44, 171, 102);
     color: white;
     padding: 8rem 2rem;
 }
