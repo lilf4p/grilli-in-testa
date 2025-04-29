@@ -4,75 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contatti - SanGiò APS</title>
+	<title>Contatti - A.P.S. GRILLI IN TESTA</title>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<style>
-		.contact-info {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 2rem;
-			margin: 2rem 0;
-		}
-
-		.contact-card {
-			flex: 1;
-			min-width: 250px;
-			background-color: #f9f9f9;
-			border-radius: 10px;
-			padding: 1.5rem;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-			transition: transform 0.3s ease;
-		}
-
-		.contact-card:hover {
-			transform: translateY(-5px);
-		}
-
-		.contact-icon {
-			font-size: 2rem;
-			color: #4CAF50;
-			margin-bottom: 1rem;
-		}
-
-		.map-container {
-			width: 100%;
-			height: 450px;
-			margin: 2rem 0;
-			border-radius: 10px;
-			overflow: hidden;
-			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-		}
-
-		.map-container iframe {
-			width: 100%;
-			height: 100%;
-			border: none;
-		}
-
-		.social-links {
-			display: flex;
-			gap: 1rem;
-			margin-top: 1rem;
-		}
-
-		.social-links a {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			width: 40px;
-			height: 40px;
-			background-color: #4CAF50;
-			border-radius: 50%;
-			color: white;
-			font-size: 1.2rem;
-			transition: background-color 0.3s ease;
-		}
-
-		.social-links a:hover {
-			background-color: #388E3C;
-		}
-	</style>
+	<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 
 <body>
@@ -81,20 +17,14 @@
 	</header>
 
 	<main>
-		<section class="page-header">
-			<h1>Contatti</h1>
+		<section class="page-header"
+			style="background-color: rgba(44, 171, 102, 1); color: white; padding: 2rem; border-radius: 8px;">
+			<h1 style="color: white;">Contatti</h1>
 			<p>Hai domande? Siamo qui per aiutarti! Contattaci utilizzando uno dei metodi sottostanti.</p>
 		</section>
 
 		<section class="contact-section">
 			<div class="contact-info">
-				<div class="contact-card">
-					<div class="contact-icon">
-						<i class="fas fa-map-marker-alt"></i>
-					</div>
-					<h3>Indirizzo</h3>
-					<p>Via Esempio, 123<br>00123 Roma, RM<br>Italia</p>
-				</div>
 
 				<div class="contact-card">
 					<div class="contact-icon">
@@ -119,26 +49,34 @@
 						<i class="fas fa-share-alt"></i>
 					</div>
 					<h3>Social</h3>
-					<div class="social-links">
-						<a href="https://instagram.com/grilli.intesta" target="_blank"><i
-								class="fab fa-instagram"></i></a>
-						<a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-						<a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-					</div>
+					<p class="instagram-text">Vieni a trovarci sul nostro profilo Instagram!<br>
+						<a href="https://www.instagram.com/grilli.intesta"
+							style="color: #4CAF50; font-weight: bold;">@grilli.intesta</a>
+					</p>
 				</div>
+
 			</div>
 		</section>
 
 		<section class="map-section">
 			<h2>Dove Siamo</h2>
-			<div class="map-container">
-				<!-- Google Maps iframe - Replace with your own location -->
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.654246115983!2d12.491975376855694!3d41.90054397922112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61a065ced2db%3A0xd21934258443b3b!2sColosseo!5m2!1s0it!2sus"
-					allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<div class="map-address-container">
+				<div class="map-container">
+					<!-- Google Maps iframe for Viale Ugo Foscolo, 11, 55049 Viareggio LU -->
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.511480203461!2d10.243954076768368!3d43.86444997109638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d5844ff9507f57%3A0x168475fd1ece76f4!2sViale%20Ugo%20Foscolo%2C%2011%2C%2055049%20Viareggio%20LU!5e0!3m2!1sen!2sit!4v1698344565324!5m2!1sen!2sit"
+						allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+				<div class="address-card-container">
+					<div class="contact-card">
+						<div class="contact-icon">
+							<i class="fas fa-map-marker-alt"></i>
+						</div>
+						<h3>Indirizzo</h3>
+						<p>Viale Ugo Foscolo, 11, 55049 Viareggio LU<br>55049 Viareggio LU<br>Italia</p>
+					</div>
+				</div>
 			</div>
-			<p>Ci trovi facilmente con i mezzi pubblici. La nostra sede è a pochi passi dalla fermata della
-				metropolitana.</p>
 		</section>
 
 		<section class="contact-form-section">
@@ -166,12 +104,12 @@
 					<input type="tel" id="telefono" name="telefono">
 				</div>
 
-				<div class="form-group">
+				<div class="form-group wide">
 					<label for="oggetto">Oggetto*</label>
 					<input type="text" id="oggetto" name="oggetto" required>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group wide">
 					<label for="messaggio">Messaggio*</label>
 					<textarea id="messaggio" name="messaggio" rows="6" required></textarea>
 				</div>
@@ -187,15 +125,44 @@
 			</form>
 		</section>
 
-		<section class="cta-section">
-			<h2>Vuoi far parte della nostra comunità?</h2>
-			<p>Diventa socio e partecipa attivamente alle nostre iniziative</p>
-			<a href="supportaci.html" class="cta">Diventa Socio</a>
-		</section>
 	</main>
 
 	<footer>
-		<p>&copy; 2025 A.P.S. GRILLI IN TESTA</p>
+		<div class="footer-container">
+			<div class="footer-section">
+				<img src="assets/logo.svg" alt="A.P.S. GRILLI IN TESTA Logo" class="footer-logo">
+				<p>Associazione di Promozione Sociale dedicata al benessere psicofisico e all'educazione attraverso il
+					gioco.</p>
+			</div>
+			<div class="footer-section">
+				<h4>Collegamenti Rapidi</h4>
+				<ul class="footer-links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="chi-siamo.html">Chi Siamo</a></li>
+					<li><a href="eventi.html">Eventi</a></li>
+					<li><a href="news.html">News</a></li>
+					<li><a href="supportaci.html">Supportaci</a></li>
+				</ul>
+			</div>
+			<div class="footer-section">
+				<h4>Contatti</h4>
+				<p><i class="fas fa-envelope"></i> info@grilliintesta.it</p>
+				<p><i class="fas fa-phone"></i> +39 123 456 7890</p>
+				<p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+			</div>
+			<div class="footer-section">
+				<h4>Seguici</h4>
+				<div class="social-icons">
+					<a href="https://instagram.com/grilli.intesta" target="_blank" aria-label="Instagram">
+						<i class="fab fa-instagram"></i>
+						<span class="social-handle">@grilli.intesta</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>&copy; 2025 A.P.S. GRILLI IN TESTA | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
+		</div>
 	</footer>
 
 	<script src="script.js"></script>

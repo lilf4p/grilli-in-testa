@@ -185,6 +185,22 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
+// Testimonial slider functionality
+document.addEventListener("DOMContentLoaded", function () {
+	const track = document.getElementById('testimonial-track');
+
+	if (track) {
+		// Pausa animazione quando si passa sopra con il mouse
+		track.addEventListener('mouseenter', () => {
+			track.style.animationPlayState = 'paused';
+		});
+
+		track.addEventListener('mouseleave', () => {
+			track.style.animationPlayState = 'running';
+		});
+	}
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 	w3IncludeHTML();
 
