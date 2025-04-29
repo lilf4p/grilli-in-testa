@@ -9,6 +9,43 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+	<style>
+		.loading-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 3rem 0;
+		}
+
+		.loading-spinner {
+			width: 50px;
+			height: 50px;
+			border: 5px solid rgba(44, 171, 102, 0.2);
+			border-top: 5px solid rgba(44, 171, 102, 1);
+			border-radius: 50%;
+			animation: spin 1s linear infinite;
+			margin-bottom: 1rem;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		.no-results {
+			padding: 3rem;
+			text-align: center;
+			font-size: 1.2rem;
+			color: #666;
+			grid-column: 1 / -1;
+		}
+	</style>
 </head>
 
 <body>
@@ -35,72 +72,13 @@
 		</section>
 
 		<section class="news-grid">
-			<article class="news-card">
-				<div class="news-image">
-					<img src="assets/placeholder-news.jpg" alt="Nuovo Laboratorio">
-				</div>
-				<div class="news-content">
-					<span class="news-date"><i class="far fa-calendar-alt"></i> 10 Novembre 2023</span>
-					<h3>Nuovo Laboratorio di Team Building</h3>
-					<p>Siamo entusiasti di annunciare il lancio di un nuovo laboratorio di team building attraverso
-						giochi cooperativi,
-						pensato per aziende e gruppi che vogliono migliorare la comunicazione...</p>
-					<a href="news-articles/team-building.html" class="read-more">Leggi tutto <i
-							class="fas fa-arrow-right"></i></a>
-				</div>
-			</article>
-
-			<article class="news-card">
-				<div class="news-image">
-					<img src="assets/placeholder-news.jpg" alt="Workshop">
-				</div>
-				<div class="news-content">
-					<span class="news-date"><i class="far fa-calendar-alt"></i> 28 Ottobre 2023</span>
-					<h3>Workshop di Gestione dello Stress</h3>
-					<p>Il prossimo mese ospiteremo un workshop sulla gestione dello stress attraverso attività ludiche,
-						tenuto dalla psicologa Dott.ssa Maria Verdi...</p>
-					<a href="news-articles/workshop-stress.html" class="read-more">Leggi tutto <i
-							class="fas fa-arrow-right"></i></a>
-				</div>
-			</article>
-
-			<article class="news-card">
-				<div class="news-image">
-					<img src="assets/placeholder-news.jpg" alt="Nuovi Laboratori">
-				</div>
-				<div class="news-content">
-					<span class="news-date"><i class="far fa-calendar-alt"></i> 15 Ottobre 2023</span>
-					<h3>Aperte le Iscrizioni ai Nuovi Laboratori</h3>
-					<p>Sono ufficialmente aperte le iscrizioni per i laboratori della stagione 2023-2024. Quest'anno
-						offriamo
-						numerose novità nel campo delle attività ludico-sportive...</p>
-					<a href="news-articles/nuovi-laboratori.html" class="read-more">Leggi tutto <i
-							class="fas fa-arrow-right"></i></a>
-				</div>
-			</article>
-
-			<article class="news-card">
-				<div class="news-image">
-					<img src="assets/placeholder-news.jpg" alt="Premio">
-				</div>
-				<div class="news-content">
-					<span class="news-date"><i class="far fa-calendar-alt"></i> 5 Ottobre 2023</span>
-					<h3>Premio per l'Impatto Sociale</h3>
-					<p>Il nostro progetto "Giochi di Inclusione" ha ricevuto un prestigioso premio per l'impatto sociale
-						e l'innovazione
-						nell'ambito del benessere psicosociale...</p>
-					<a href="news-articles/premio-sociale.html" class="read-more">Leggi tutto <i
-							class="fas fa-arrow-right"></i></a>
-				</div>
-			</article>
+			<!-- News articles will be dynamically loaded here -->
+			<div class="loading-container">
+				<div class="loading-spinner"></div>
+				<p>Caricamento notizie in corso...</p>
+			</div>
 		</section>
 
-		<div class="pagination">
-			<button class="page-btn active">1</button>
-			<button class="page-btn">2</button>
-			<button class="page-btn">3</button>
-			<button class="page-btn"><i class="fas fa-chevron-right"></i></button>
-		</div>
 	</main>
 
 	<footer>

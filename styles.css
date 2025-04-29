@@ -820,6 +820,112 @@ header {
     margin-right: auto;
 }
 
+/* Home events container styles */
+.home-events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.home-event-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-event-card .event-image {
+    height: 200px;
+    width: 100%;
+}
+
+.home-event-card .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-event-card .event-info {
+    padding: 1.5rem;
+}
+
+.home-event-card h3 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.home-event-card .event-date,
+.home-event-card .event-time,
+.home-event-card .event-location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.home-event-card .event-date i,
+.home-event-card .event-time i,
+.home-event-card .event-location i {
+    margin-right: 0.5rem;
+    color: #2CAB66;
+    width: 16px;
+    text-align: center;
+}
+
+.home-event-card .cta-small {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #f90;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.home-event-card .cta-small:hover {
+    background: #ff8c00;
+    transform: scale(1.05);
+}
+
+.view-all-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.no-events {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+    width: 100%;
+}
+
+.loading-indicator {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+}
+
 /* Footer Styles */
 footer {
     background-color: #f5f5f5;
@@ -1953,46 +2059,174 @@ main.loaded {
 
 .event-card {
     display: flex;
-    margin-bottom: 3rem;
-    background-color: white;
+    flex-direction: column;
+    margin-bottom: 2rem;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .event-card {
+        flex-direction: row;
+    }
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .event-image {
-    flex: 1;
-    max-width: 300px;
+    flex: 0 0 40%;
+    overflow: hidden;
 }
 
 .event-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
 }
 
 .event-info {
-    flex: 2;
-    padding: 2rem;
+    flex: 1;
+    padding: 1.5rem;
+    text-align: left;
+    /* Explicitly align text to the left */
 }
 
 .event-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: rgba(44, 171, 102);
-    font-family: 'Saira Semi Condensed', sans-serif;
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    /* Ensure headers are left-aligned */
 }
 
 .event-date,
 .event-time,
 .event-location {
+    display: flex;
+    align-items: center;
     margin-bottom: 0.5rem;
+    font-size: 0.9rem;
     color: #666;
+    text-align: left;
+    /* Ensure all information is left-aligned */
+}
+
+.event-date i,
+.event-time i,
+.event-location i {
+    margin-right: 0.5rem;
+    color: #2CAB66;
+    width: 16px;
+    text-align: center;
 }
 
 .event-description {
-    margin: 1.5rem 0;
-    line-height: 1.8;
+    margin: 1rem 0;
+    line-height: 1.6;
+    color: #444;
+    text-align: left;
+    /* Ensure description is left-aligned */
+}
+
+/* Search bar and filters for events page */
+.event-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
+    /* Align items vertically */
+}
+
+.search-container {
+    flex: 1;
+    max-width: 300px;
+    /* Limit the width of the search bar */
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    color: #2CAB66;
+}
+
+.filter-container {
+    display: flex;
+    flex: 1;
+    gap: 1rem;
+    /* Gap between filters */
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.filter-container select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-color: white;
+    min-width: 150px;
+    max-width: 200px;
+    /* Limit max width of dropdown */
+    flex: 1;
+}
+
+/* Responsive adjustments for events page filters */
+@media (max-width: 768px) {
+    .event-filters {
+        flex-direction: column;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .filter-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .filter-container select {
+        flex: 1;
+        margin-bottom: 0.5rem;
+        /* Add space between wrapping filters */
+    }
 }
 
 .past-events {
@@ -2043,6 +2277,11 @@ main.loaded {
 .past-event p {
     color: #666;
     font-size: 0.9rem;
+}
+
+/* Added styles for past events */
+.past-event {
+    opacity: 0.7;
 }
 
 /* Responsive adjustments for events page */

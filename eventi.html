@@ -20,122 +20,39 @@
 		<section class="page-header"
 			style="background-color: rgba(44, 171, 102, 1); color: white; padding: 2rem; border-radius: 8px;">
 			<h1 style="color: white;">Eventi</h1>
-			<p>Scopri tutti gli eventi ludico-sportivi e psicologici organizzati dall'associazione SanGiò</p>
+			<p>Scopri tutti gli eventi ludico-sportivi e psicologici organizzati dall'A.P.S. GRILLI IN TESTA</p>
 		</section>
 
-		<section class="event-calendar">
-			<h2>Calendario</h2>
-			<div class="calendar-filters">
+		<section class="event-filters">
+			<div class="search-container">
+				<input type="text" id="event-search" class="search-input" placeholder="Cerca eventi...">
+				<button id="search-btn"><i class="fas fa-search"></i></button>
+			</div>
+
+			<div class="filter-container">
+				<select id="event-status-filter">
+					<option value="all">Tutti gli eventi</option>
+					<option value="upcoming">Eventi futuri</option>
+					<option value="past">Eventi conclusi</option>
+				</select>
+
 				<select id="season-filter">
+					<option value="all">Tutte le stagioni</option>
+					<option value="2024-2025">Stagione 2024-2025</option>
 					<option value="2023-2024">Stagione 2023-2024</option>
 					<option value="2022-2023">Stagione 2022-2023</option>
 				</select>
-				<button class="filter-btn">Filtra</button>
 			</div>
 		</section>
 
 		<section class="events-list">
-			<article class="event-card">
-				<div class="event-image">
-					<img src="assets/placeholder-performance.jpg" alt="Evento Ludico">
-				</div>
-				<div class="event-info">
-					<h3>Giochi di Team Building all'Aperto</h3>
-					<p class="event-date"><i class="far fa-calendar-alt"></i> 15 Dicembre 2025</p>
-					<p class="event-time"><i class="far fa-clock"></i> 16:00</p>
-					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Parco Comunale</p>
-					<p class="event-description">
-						Una giornata dedicata ad attività ludiche all'aperto che favoriscono la collaborazione
-						e la comunicazione di gruppo. Adatto a famiglie e gruppi di amici di tutte le età.
-					</p>
-					<a href="#" class="cta">Prenota Posto</a>
-				</div>
-			</article>
-
-			<article class="event-card">
-				<div class="event-image">
-					<img src="assets/placeholder-performance.jpg" alt="Workshop Psicologico">
-				</div>
-				<div class="event-info">
-					<h3>Workshop sulla Comunicazione Empatica</h3>
-					<p class="event-date"><i class="far fa-calendar-alt"></i> 22 Gennaio 2024</p>
-					<p class="event-time"><i class="far fa-clock"></i> 18:30</p>
-					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Sala Conferenze</p>
-					<p class="event-description">
-						Un workshop interattivo per esplorare e migliorare le capacità di comunicazione empatica
-						attraverso giochi di ruolo e attività strutturate guidate da psicologi esperti.
-					</p>
-					<a href="#" class="cta-concluso">Evento Concluso</a>
-				</div>
-			</article>
-
-			<article class="event-card">
-				<div class="event-image">
-					<img src="assets/placeholder-performance.jpg" alt="Attività per Famiglie">
-				</div>
-				<div class="event-info">
-					<h3>Giornata delle Famiglie: Giochi e Benessere</h3>
-					<p class="event-date"><i class="far fa-calendar-alt"></i> 15 Marzo 2024</p>
-					<p class="event-time"><i class="far fa-clock"></i> 10:00</p>
-					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Centro Ricreativo</p>
-					<p class="event-description">
-						Un evento speciale dedicato alle famiglie con bambini, con attività ludiche che promuovono la
-						cooperazione e il dialogo intergenerazionale. Include laboratori creativi e momenti di
-						riflessione.
-					</p>
-					<a href="#" class="cta-concluso">Evento Concluso</a>
-				</div>
-			</article>
-
-			<article class="event-card">
-				<div class="event-image">
-					<img src="assets/placeholder-small.jpg" alt="Giornata Mondiale del Gioco">
-				</div>
-				<div class="event-info">
-					<h3>Giornata Mondiale del Gioco</h3>
-					<p class="event-date"><i class="far fa-calendar-alt"></i> Novembre 2022</p>
-					<p class="event-time"><i class="far fa-clock"></i> 15:00</p>
-					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Parco Cittadino</p>
-					<p class="event-description">
-						Celebrazione della giornata mondiale del gioco con attività ludiche e ricreative per tutte le età.
-					</p>
-					<a href="#" class="cta-concluso">Evento Concluso</a>
-				</div>
-			</article>
-
-			<article class="event-card">
-				<div class="event-image">
-					<img src="assets/placeholder-small.jpg" alt="Workshop sulla Gestione dei Conflitti">
-				</div>
-				<div class="event-info">
-					<h3>Workshop sulla Gestione dei Conflitti</h3>
-					<p class="event-date"><i class="far fa-calendar-alt"></i> Marzo 2022</p>
-					<p class="event-time"><i class="far fa-clock"></i> 18:00</p>
-					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Sala Conferenze</p>
-					<p class="event-description">
-						Workshop interattivo su tecniche efficaci per la gestione dei conflitti interpersonali.
-					</p>
-					<a href="#" class="cta-concluso">Evento Concluso</a>
-				</div>
-			</article>
-
-			<article class="event-card">
-				<div class="event-image">
-					<img src="assets/placeholder-small.jpg" alt="Torneo di Giochi Cooperativi">
-				</div>
-				<div class="event-info">
-					<h3>Torneo di Giochi Cooperativi</h3>
-					<p class="event-date"><i class="far fa-calendar-alt"></i> Gennaio 2022</p>
-					<p class="event-time"><i class="far fa-clock"></i> 14:30</p>
-					<p class="event-location"><i class="fas fa-map-marker-alt"></i> Centro Sportivo</p>
-					<p class="event-description">
-						Torneo di giochi che promuovono la collaborazione e lo spirito di squadra tra i partecipanti.
-					</p>
-					<a href="#" class="cta-concluso">Evento Concluso</a>
-				</div>
-			</article>
+			<!-- Events will be loaded dynamically from the API -->
+			<div class="loading-indicator">Caricamento eventi in corso...</div>
 		</section>
 
+		<section class="no-results" style="display: none;">
+			<p>Nessun evento trovato. Prova a modificare i filtri di ricerca.</p>
+		</section>
 	</main>
 
 	<footer>
