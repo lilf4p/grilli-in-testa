@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premio per l'Impatto Sociale - A.P.S. GRILLI IN TESTA</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <header>
+        <div w3-include-html="../navbar.html" id="navbar-container"></div>
+        <script>
+            // Fix logo path for subdirectory pages
+            document.addEventListener('DOMContentLoaded', function () {
+                // Wait for the navbar to be loaded
+                setTimeout(function () {
+                    const logoImg = document.querySelector('.logo img');
+                    if (logoImg) {
+                        // Update the logo image src to point to the correct location
+                        logoImg.src = "../assets/logo.svg";
+                    }
+
+                    // Fix navigation links
+                    const navLinks = document.querySelectorAll('.nav-links a:not([target="_blank"])');
+                    navLinks.forEach(link => {
+                        if (!link.getAttribute('href').startsWith('http') && !link.getAttribute('href').startsWith('../')) {
+                            link.href = "../" + link.getAttribute('href');
+                        }
+                    });
+                }, 100);
+            });
+        </script>
+    </header>
+
+    <main class="article-page">
+        <div class="article-container">
+            <div class="article-header">
+                <a href="../news.html" class="back-to-news"><i class="fas fa-arrow-left"></i> Torna alle News</a>
+                <span class="article-date"><i class="far fa-calendar-alt"></i> 5 Ottobre 2023</span>
+                <h1>Premio per l'Impatto Sociale</h1>
+            </div>
+
+            <div class="article-image">
+                <img src="../assets/placeholder-news.jpg" alt="Premio per l'Impatto Sociale">
+            </div>
+
+            <div class="article-content">
+                <p>Il nostro progetto "Giochi di Inclusione" ha ricevuto un prestigioso premio per l'impatto sociale e
+                    l'innovazione nell'ambito del benessere psicosociale. Siamo estremamente orgogliosi di questo
+                    riconoscimento che valorizza il lavoro svolto negli ultimi due anni con comunità svantaggiate.</p>
+
+                <p>La cerimonia di premiazione si è svolta lo scorso 2 ottobre presso la Sala Conferenze della
+                    Fondazione per l'Innovazione Sociale, alla presenza di rappresentanti delle istituzioni locali e di
+                    altre organizzazioni attive nel terzo settore.</p>
+
+                <h2>Il Progetto "Giochi di Inclusione"</h2>
+                <p>Avviato nel 2021, il progetto "Giochi di Inclusione" si è posto l'obiettivo di utilizzare attività
+                    ludiche strutturate come strumento di integrazione sociale per bambini e adulti con disabilità o
+                    provenienti da contesti di marginalità. Il progetto ha coinvolto oltre 150 partecipanti di diverse
+                    età e background, creando spazi di incontro e crescita attraverso il gioco.</p>
+
+                <p>Il programma si è articolato in tre principali aree di intervento:</p>
+                <ul>
+                    <li><strong>Laboratori inclusivi:</strong> percorsi ludici pensati per gruppi misti, in cui le
+                        diverse abilità diventano risorse complementari</li>
+                    <li><strong>Formazione per educatori:</strong> strumenti e metodologie per utilizzare il gioco come
+                        mezzo di inclusione in contesti educativi e riabilitativi</li>
+                    <li><strong>Sviluppo di materiali ludici accessibili:</strong> creazione e adattamento di giochi per
+                        renderli fruibili anche a persone con disabilità sensoriali o cognitive</li>
+                </ul>
+
+                <h2>Motivazione del Premio</h2>
+                <p>Secondo la commissione giudicante, il progetto "Giochi di Inclusione" si è distinto per:</p>
+                <ul>
+                    <li>L'approccio innovativo nell'utilizzo del gioco come strumento di inclusione sociale</li>
+                    <li>La capacità di creare ponti tra diverse realtà e abbattere barriere</li>
+                    <li>La metodologia partecipativa che ha coinvolto attivamente i beneficiari in tutte le fasi</li>
+                    <li>L'impatto misurabile sui partecipanti in termini di benessere psicosociale e inclusione</li>
+                    <li>La sostenibilità e replicabilità del modello proposto</li>
+                </ul>
+
+                <p>La giuria ha particolarmente apprezzato l'approccio del progetto, che non considera la disabilità o
+                    lo svantaggio sociale come un problema da risolvere, ma valorizza la diversità come risorsa che
+                    arricchisce l'esperienza di gioco per tutti i partecipanti.</p>
+
+                <h2>Impatto e Risultati</h2>
+                <p>I risultati raggiunti dal progetto negli ultimi due anni comprendono:</p>
+                <ul>
+                    <li>150+ partecipanti diretti ai laboratori inclusivi</li>
+                    <li>30 educatori e operatori sociali formati sulla metodologia</li>
+                    <li>15 giochi adattati o creati ex novo per essere accessibili</li>
+                    <li>5 partnership attivate con scuole e centri riabilitativi</li>
+                    <li>Significativo miglioramento nelle competenze sociali e nell'autostima dei partecipanti,
+                        documentato attraverso valutazioni pre e post intervento</li>
+                </ul>
+
+                <p>Le testimonianze raccolte dai partecipanti e dalle loro famiglie confermano l'impatto positivo del
+                    progetto non solo in termini di inclusione sociale, ma anche di benessere generale e qualità della
+                    vita.</p>
+
+                <h2>Prospettive Future</h2>
+                <p>Grazie anche al riconoscimento ottenuto, nei prossimi mesi prevediamo di:</p>
+                <ul>
+                    <li>Estendere il progetto ad altre 3 comunità del territorio</li>
+                    <li>Sviluppare un manuale metodologico per diffondere l'approccio ad altre realtà</li>
+                    <li>Avviare una collaborazione con l'università locale per una valutazione scientifica dell'impatto
+                    </li>
+                    <li>Creare una piattaforma online di risorse e strumenti per educatori e famiglie</li>
+                </ul>
+
+                <h2>Ringraziamenti</h2>
+                <p>Questo riconoscimento non sarebbe stato possibile senza il contributo di tutte le persone che hanno
+                    partecipato al progetto: i volontari dell'associazione, i partecipanti e le loro famiglie, le
+                    organizzazioni partner e gli enti che hanno sostenuto l'iniziativa.</p>
+
+                <p>Un ringraziamento speciale va anche alla Fondazione per l'Innovazione Sociale per aver riconosciuto
+                    il valore del nostro lavoro e per il sostegno che ci permetterà di continuare a sviluppare il
+                    progetto negli anni a venire.</p>
+
+                <p>Per maggiori informazioni sul progetto "Giochi di Inclusione" o per partecipare alle prossime
+                    attività, contattaci all'indirizzo <a href="mailto:info@grilliintesta.it">info@grilliintesta.it</a>.
+                </p>
+            </div>
+
+            <div class="article-footer">
+                <div class="share-buttons">
+                    <h4>Condividi:</h4>
+                    <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+                <a href="../news.html" class="back-to-news"><i class="fas fa-arrow-left"></i> Torna alle News</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="../assets/logo.svg" alt="A.P.S. GRILLI IN TESTA Logo" class="footer-logo">
+                <p>Associazione di Promozione Sociale dedicata al benessere psicofisico e all'educazione attraverso il
+                    gioco.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Collegamenti Rapidi</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="../eventi.html">Eventi</a></li>
+                    <li><a href="../news.html">News</a></li>
+                    <li><a href="../supportaci.html">Supportaci</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contatti</h4>
+                <p><i class="fas fa-envelope"></i> info@grilliintesta.it</p>
+                <p><i class="fas fa-phone"></i> +39 123 456 7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+            </div>
+            <div class="footer-section">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="https://instagram.com/grilli.intesta" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-handle">@grilli.intesta</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 A.P.S. GRILLI IN TESTA | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

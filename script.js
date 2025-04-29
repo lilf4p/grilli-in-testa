@@ -53,6 +53,117 @@ function updatePageContent(content) {
 	// This can be expanded based on what data is available in the API
 }
 
+// News page search and sort functionality
+function initNewsFilters() {
+	const searchInput = document.querySelector('.search-input');
+	const sortSelect = document.querySelector('.sort-select');
+	const newsCards = document.querySelectorAll('.news-card');
+
+	if (!searchInput || !sortSelect || newsCards.length === 0) return;
+
+	console.log('Initializing news filters');
+
+	// Function to parse Italian dates (format: "10 Novembre 2023")
+	function parseItalianDate(dateString) {
+		// Extract the date from the string format "10 Novembre 2023"
+		const dateText = dateString.replace(/[^\w\s]/g, '').trim(); // Remove icons and other non-word chars
+		const parts = dateText.split(' ');
+
+		if (parts.length < 3) return new Date(0); // Invalid date
+
+		const day = parseInt(parts[parts.length - 3]);
+		const monthName = parts[parts.length - 2].toLowerCase();
+		const year = parseInt(parts[parts.length - 1]);
+
+		// Map Italian month names to numbers
+		const monthMap = {
+			'gennaio': 0,
+			'febbraio': 1,
+			'marzo': 2,
+			'aprile': 3,
+			'maggio': 4,
+			'giugno': 5,
+			'luglio': 6,
+			'agosto': 7,
+			'settembre': 8,
+			'ottobre': 9,
+			'novembre': 10,
+			'dicembre': 11
+		};
+
+		const month = monthMap[monthName] || 0;
+
+		return new Date(year, month, day);
+	}
+
+	// Function to filter news items
+	function filterNews() {
+		const searchTerm = searchInput.value.toLowerCase().trim();
+		const sortMethod = sortSelect.value;
+
+		// Convert NodeList to Array for easier sorting
+		const newsArray = Array.from(newsCards);
+
+		// Sort the news array based on selected option
+		newsArray.sort((a, b) => {
+			if (sortMethod === 'recent') {
+				// Sort by date (most recent first)
+				const dateA = parseItalianDate(a.querySelector('.news-date').textContent);
+				const dateB = parseItalianDate(b.querySelector('.news-date').textContent);
+				return dateB - dateA;
+			} else if (sortMethod === 'oldest') {
+				// Sort by date (oldest first)
+				const dateA = parseItalianDate(a.querySelector('.news-date').textContent);
+				const dateB = parseItalianDate(b.querySelector('.news-date').textContent);
+				return dateA - dateB;
+			} else if (sortMethod === 'title') {
+				// Sort alphabetically by title
+				const titleA = a.querySelector('h3').textContent.toLowerCase();
+				const titleB = b.querySelector('h3').textContent.toLowerCase();
+				return titleA.localeCompare(titleB);
+			}
+			return 0;
+		});
+
+		// Apply search filter and update visibility
+		const newsGrid = document.querySelector('.news-grid');
+
+		// Clear the grid
+		while (newsGrid.firstChild) {
+			newsGrid.removeChild(newsGrid.firstChild);
+		}
+
+		// Add filtered and sorted items back to the grid
+		let hasVisibleItems = false;
+
+		newsArray.forEach(card => {
+			const title = card.querySelector('h3').textContent.toLowerCase();
+			const content = card.querySelector('p').textContent.toLowerCase();
+			const date = card.querySelector('.news-date').textContent.toLowerCase();
+
+			if (title.includes(searchTerm) || content.includes(searchTerm) || date.includes(searchTerm) || searchTerm === '') {
+				newsGrid.appendChild(card);
+				hasVisibleItems = true;
+			}
+		});
+
+		// If no items match the search, show a message
+		if (!hasVisibleItems) {
+			const noResults = document.createElement('div');
+			noResults.className = 'no-results';
+			noResults.textContent = 'Nessun risultato trovato per la ricerca.';
+			newsGrid.appendChild(noResults);
+		}
+	}
+
+	// Add event listeners
+	searchInput.addEventListener('input', filterNews);
+	sortSelect.addEventListener('change', filterNews);
+
+	// Initial sort by default option
+	filterNews();
+}
+
 function w3IncludeHTML() {
 	var z, i, elmnt, file, xhttp;
 	/* Loop through a collection of all HTML elements: */
@@ -232,6 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Now fetch content from API once everything else is loaded
 			console.log('Fetching content from API...');
 			fetchAndUpdateContent();
+
+			// Initialize news page filters if we're on the news page
+			initNewsFilters();
 
 			// Handle page load transitions
 			handlePageLoad();

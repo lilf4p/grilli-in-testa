@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuovo Laboratorio di Team Building - A.P.S. GRILLI IN TESTA</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <header>
+        <div w3-include-html="../navbar.html" id="navbar-container"></div>
+        <script>
+            // Fix logo path for subdirectory pages
+            document.addEventListener('DOMContentLoaded', function () {
+                // Wait for the navbar to be loaded
+                setTimeout(function () {
+                    const logoImg = document.querySelector('.logo img');
+                    if (logoImg) {
+                        // Update the logo image src to point to the correct location
+                        logoImg.src = "../assets/logo.svg";
+                    }
+
+                    // Fix navigation links
+                    const navLinks = document.querySelectorAll('.nav-links a:not([target="_blank"])');
+                    navLinks.forEach(link => {
+                        if (!link.getAttribute('href').startsWith('http') && !link.getAttribute('href').startsWith('../')) {
+                            link.href = "../" + link.getAttribute('href');
+                        }
+                    });
+                }, 100);
+            });
+        </script>
+    </header>
+
+    <main class="article-page">
+        <div class="article-container">
+            <div class="article-header">
+                <a href="../news.html" class="back-to-news"><i class="fas fa-arrow-left"></i> Torna alle News</a>
+                <span class="article-date"><i class="far fa-calendar-alt"></i> 10 Novembre 2023</span>
+                <h1>Nuovo Laboratorio di Team Building</h1>
+            </div>
+
+            <div class="article-image">
+                <img src="../assets/placeholder-news.jpg" alt="Laboratorio di Team Building">
+            </div>
+
+            <div class="article-content">
+                <p>Siamo entusiasti di annunciare il lancio di un nuovo laboratorio di team building attraverso giochi
+                    cooperativi, pensato per aziende e gruppi che vogliono migliorare la comunicazione e la
+                    collaborazione tra i membri del team.</p>
+
+                <p>Il laboratorio, che avrà inizio il prossimo mese, offrirà un'esperienza unica e coinvolgente,
+                    utilizzando il potere del gioco per sviluppare competenze essenziali come la leadership, la
+                    comunicazione efficace e la risoluzione creativa dei problemi.</p>
+
+                <h2>Obiettivi del laboratorio</h2>
+                <ul>
+                    <li>Migliorare la comunicazione all'interno del team</li>
+                    <li>Sviluppare fiducia e collaborazione tra i membri</li>
+                    <li>Identificare e sfruttare i punti di forza individuali</li>
+                    <li>Imparare a gestire i conflitti in modo costruttivo</li>
+                    <li>Aumentare la motivazione e il coinvolgimento</li>
+                </ul>
+
+                <p>Il laboratorio sarà condotto da formatori esperti nel campo della psicologia di gruppo e delle
+                    dinamiche di team, che utilizzeranno una varietà di attività ludiche progettate specificamente per
+                    affrontare le sfide più comuni nei contesti lavorativi.</p>
+
+                <h2>Metodologia</h2>
+                <p>Il nostro approccio si basa sulla convinzione che il gioco rappresenti uno strumento potente per
+                    l'apprendimento degli adulti. Attraverso esperienze di gioco strutturate, i partecipanti avranno
+                    l'opportunità di sperimentare nuovi comportamenti in un ambiente sicuro e di riflettere su come
+                    questi possano essere applicati nel contesto lavorativo quotidiano.</p>
+
+                <p>Ogni sessione del laboratorio include:</p>
+                <ul>
+                    <li>Attività di riscaldamento per creare un'atmosfera rilassata</li>
+                    <li>Giochi cooperativi che richiedono strategie di gruppo</li>
+                    <li>Momenti di debriefing per riflettere sulle esperienze vissute</li>
+                    <li>Discussioni guidate per collegare le attività ludiche alle situazioni lavorative reali</li>
+                    <li>Piano d'azione personale per implementare le competenze apprese</li>
+                </ul>
+
+                <h2>Per chi è pensato</h2>
+                <p>Il laboratorio è ideale per:</p>
+                <ul>
+                    <li>Team di lavoro che desiderano migliorare le proprie dinamiche interne</li>
+                    <li>Gruppi di nuova formazione che vogliono creare una base solida di collaborazione</li>
+                    <li>Team che affrontano sfide particolari o cambiamenti organizzativi</li>
+                    <li>Aziende che vogliono investire nel benessere e nella coesione dei propri dipendenti</li>
+                </ul>
+
+                <p>Per maggiori informazioni sul laboratorio, sui costi e per prenotare una sessione per il vostro team,
+                    vi invitiamo a contattarci tramite email all'indirizzo <a
+                        href="mailto:info@grilliintesta.it">info@grilliintesta.it</a> o telefonicamente al numero +39
+                    123 456 7890.</p>
+            </div>
+
+            <div class="article-footer">
+                <div class="share-buttons">
+                    <h4>Condividi:</h4>
+                    <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+                <a href="../news.html" class="back-to-news"><i class="fas fa-arrow-left"></i> Torna alle News</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="../assets/logo.svg" alt="A.P.S. GRILLI IN TESTA Logo" class="footer-logo">
+                <p>Associazione di Promozione Sociale dedicata al benessere psicofisico e all'educazione attraverso il
+                    gioco.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Collegamenti Rapidi</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="../eventi.html">Eventi</a></li>
+                    <li><a href="../news.html">News</a></li>
+                    <li><a href="../supportaci.html">Supportaci</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contatti</h4>
+                <p><i class="fas fa-envelope"></i> info@grilliintesta.it</p>
+                <p><i class="fas fa-phone"></i> +39 123 456 7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
+            </div>
+            <div class="footer-section">
+                <h4>Seguici</h4>
+                <div class="social-icons">
+                    <a href="https://instagram.com/grilli.intesta" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-handle">@grilli.intesta</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 A.P.S. GRILLI IN TESTA | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

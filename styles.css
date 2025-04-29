@@ -114,9 +114,9 @@ header {
 .cta {
     padding: 0.7rem 1.5rem;
     font-size: 1rem;
+    font-weight: bold;
     color: #000;
     background: #f90;
-    /* Orange background rgba(255,0,0) */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -125,6 +125,19 @@ header {
     /* Remove underlines when used as links */
     display: inline-block;
     /* Ensures proper rendering as button */
+}
+
+.cta-concluso {
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+    text-decoration: none;
+    /* Prevents interaction */
 }
 
 .cta:hover {
@@ -403,6 +416,55 @@ header {
 .page-btn:hover {
     background: rgba(44, 171, 102);
     color: white;
+}
+
+.news-filter {
+    margin-bottom: 2rem;
+}
+
+.search-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: rgba(44, 171, 102);
+    outline: none;
+}
+
+.sort-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.sort-select:focus {
+    border-color: rgba(44, 171, 102);
+    outline: none;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #666;
+    grid-column: 1 / -1;
 }
 
 /* About Us Page Styles */
@@ -1123,6 +1185,101 @@ footer {
         font-size: 1rem;
         /* Further reduced font size for smallest screens */
     }
+}
+
+/* Modal styles for news articles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(1px);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: modalSlideIn 0.3s ease-in-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.modal-date {
+    color: #777;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-title {
+    margin: 0;
+    color: #2cab66;
+}
+
+.modal-image {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.modal-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.modal-body {
+    line-height: 1.6;
+}
+
+body.modal-open {
+    overflow: hidden;
 }
 
 /* Membership Page Styles */
@@ -2001,5 +2158,178 @@ main.loaded {
 @media (max-width: 768px) {
     .testimonial {
         min-width: 260px;
+    }
+}
+
+/* Article Page Styles */
+.article-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.article-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.article-header {
+    padding: 2rem;
+    position: relative;
+}
+
+.article-header h1 {
+    color: rgba(44, 171, 102);
+    font-family: 'Saira Semi Condensed', sans-serif;
+    margin: 0.5rem 0 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.article-date {
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+    margin: 0.8rem 0;
+}
+
+.back-to-news {
+    display: inline-block;
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+}
+
+.back-to-news:hover {
+    color: rgba(44, 171, 102);
+}
+
+.article-image {
+    width: 100%;
+}
+
+.article-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 2rem;
+    line-height: 1.8;
+}
+
+.article-content h2 {
+    color: rgba(44, 171, 102);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+.article-content h3 {
+    color: #444;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+.article-content p {
+    margin-bottom: 1.2rem;
+}
+
+.article-content ul,
+.article-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+.article-content a {
+    color: rgba(44, 171, 102);
+    text-decoration: none;
+}
+
+.article-content a:hover {
+    text-decoration: underline;
+}
+
+.article-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.share-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.share-buttons h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.share-btn:hover {
+    transform: scale(1.1);
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+
+.whatsapp {
+    background-color: #25d366;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+
+    .article-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .article-page {
+        padding: 1rem;
+    }
+
+    .article-content {
+        padding: 1.5rem;
     }
 }
