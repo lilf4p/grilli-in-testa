@@ -141,10 +141,70 @@ header {
 }
 
 .cta:hover {
-    background: #fff;
+    background: rgb(216, 130, 0);
     transform: scale(1.1);
     text-decoration: none;
     /* Ensure no underline appears on hover state */
+}
+
+/* Form Success and Error Message Styles */
+.submission-success,
+.submission-error {
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  animation: fadeInSlide 0.5s ease-in-out;
+}
+
+.submission-success {
+  background-color: rgba(44, 171, 102, 0.1);
+  border-left: 4px solid rgba(44, 171, 102, 1);
+  color: #155724;
+}
+
+.submission-error {
+  background-color: #fff2f2;
+  border-left: 4px solid #dc3545;
+  color: #721c24;
+}
+
+.submission-success i,
+.submission-error i {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.submission-success i {
+  color: rgba(44, 171, 102, 1);
+}
+
+.submission-error i {
+  color: #dc3545;
+}
+
+.submission-success h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  color: rgba(44, 171, 102, 1);
+}
+
+.submission-success p,
+.submission-error p {
+  margin: 0;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
@@ -1392,6 +1452,8 @@ body.modal-open {
 .membership-benefits {
     padding: 3rem 2rem;
     text-align: center;
+    justify-content: center;
+    content: center;
 }
 
 .membership-benefits h2,
@@ -1405,19 +1467,26 @@ body.modal-open {
 }
 
 .benefits-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .benefit-card {
+    flex: 0 0 260px; /* Fixed width of 300px */
+    height: 260px; /* Fixed height of 300px */
     background: white;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .benefit-card:hover {
@@ -1520,10 +1589,21 @@ body.modal-open {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
+    flex: 0 0 calc(50% - 10px);
+    /* Take up half the width minus the gap */
+}
+
+.form-group.wide {
+    flex: 0 0 100%;
+    width: 100%;
 }
 
 .form-group label {
@@ -1539,11 +1619,18 @@ body.modal-open {
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 4px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
 }
 
 .form-group.checkbox {
     display: flex;
     align-items: flex-start;
+    flex: 0 0 100%;
 }
 
 .form-group.checkbox input {
@@ -1552,10 +1639,17 @@ body.modal-open {
     margin-top: 5px;
 }
 
+.contact-form .cta {
+    width: 100%;
+    text-align: center;
+}
+
 .form-note {
     margin-top: 1rem;
     font-size: 0.9rem;
     color: #666;
+    text-align: center;
+    width: 100%;
 }
 
 .cta-section {
@@ -1590,6 +1684,10 @@ body.modal-open {
 
     .benefit-card {
         margin-bottom: 1rem;
+    }
+
+    .form-group {
+        flex: 0 0 100%;
     }
 }
 
@@ -1879,6 +1977,7 @@ main.loaded {
     gap: 2rem;
     justify-content: center;
     align-items: flex-start;
+    margin-bottom: 2rem;
 }
 
 .map-container {
@@ -1888,6 +1987,8 @@ main.loaded {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    /* Add bottom margin to ensure gap on wrap */
 }
 
 .map-container iframe {
@@ -1901,6 +2002,22 @@ main.loaded {
     min-width: 250px;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
+    /* Ensure space between cards when stacked */
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+    .map-address-container {
+        gap: 3rem;
+        /* Increase gap on smaller screens */
+    }
+
+    .map-container,
+    .address-card-container {
+        width: 100%;
+        /* Full width on small screens */
+    }
 }
 
 .contact-form-section {
@@ -1926,16 +2043,20 @@ main.loaded {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
-    flex: 1;
-    min-width: 45%;
+    flex: 0 0 calc(50% - 10px);
+    /* Take up half the width minus the gap */
 }
 
 .form-group.wide {
-    flex: 100%;
+    flex: 0 0 100%;
     width: 100%;
 }
 
@@ -1953,6 +2074,7 @@ main.loaded {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-family: inherit;
+    box-sizing: border-box;
 }
 
 .form-group textarea {
@@ -1962,6 +2084,7 @@ main.loaded {
 .form-group.checkbox {
     display: flex;
     align-items: flex-start;
+    flex: 0 0 100%;
 }
 
 .form-group.checkbox input {
@@ -1980,44 +2103,13 @@ main.loaded {
     font-size: 0.9rem;
     color: #666;
     text-align: center;
+    width: 100%;
 }
 
 /* Responsive design for contact page */
-@media (min-width: 768px) {
-    .contact-form {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .map-address-container {
-        flex-direction: column;
-    }
-
-    .map-container {
-        width: 100%;
-    }
-
-    .address-card-container {
-        width: 100%;
-    }
-}
-
 @media (max-width: 768px) {
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-card {
-        width: 100%;
-        max-width: 100%;
-    }
-
     .form-group {
-        min-width: 100%;
+        flex: 0 0 100%;
     }
 }
 
@@ -2157,7 +2249,7 @@ main.loaded {
 
 .search-container {
     flex: 1;
-    max-width: 300px;
+    max-width: 200px;
     /* Limit the width of the search bar */
     position: relative;
 }

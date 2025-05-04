@@ -17,8 +17,7 @@
 	</header>
 
 	<main>
-		<section class="page-header"
-			style="background-color: rgba(44, 171, 102, 1); color: white; padding: 2rem;">
+		<section class="page-header" style="background-color: rgba(44, 171, 102, 1); color: white; padding: 2rem;">
 			<h1 style="color: white;">Supportaci</h1>
 			<p>Unisciti alla nostra Associazione di Promozione Sociale e partecipa attivamente alle iniziative per il
 				benessere psicosociale</p>
@@ -33,14 +32,6 @@
 					</div>
 					<h3>Accesso Prioritario agli Eventi</h3>
 					<p>Prenotazione prioritaria per tutti i nostri eventi ludico-sportivi e workshop</p>
-				</div>
-
-				<div class="benefit-card">
-					<div class="benefit-icon">
-						<i class="fas fa-brain"></i>
-					</div>
-					<h3>Sconti sui Laboratori</h3>
-					<p>Tariffe agevolate su tutti i laboratori e le attività formative dell'associazione</p>
 				</div>
 
 				<div class="benefit-card">
@@ -63,47 +54,35 @@
 		</section>
 
 		<section class="membership-types">
-			<h2>Tipologie di Associazione</h2>
+			<h2>Tipologie di Supporto</h2>
 			<div class="membership-options">
 				<div class="membership-option">
-					<h3>Socio Ordinario</h3>
-					<div class="price">25€/anno</div>
+					<h3>Donazione</h3>
+					<div class="price">Libera</div>
 					<ul>
-						<li>Sconto del 15% sui laboratori</li>
-						<li>Accesso a tutti gli eventi sociali</li>
-						<li>Newsletter mensile</li>
-						<li>Partecipazione all'assemblea dei soci</li>
+						<li>Contributo libero per sostenere le nostre attività</li>
+						<li>Riceverai una ricevuta per la tua donazione</li>
 					</ul>
-					<a href="#form" class="cta">Iscriviti</a>
+					<div class="donation-info">
+						Per donare, effettua un bonifico all'IBAN:<br>
+						<strong>IT12A0123456789000123456789</strong>
+					</div>
 				</div>
 
 				<div class="membership-option featured">
 					<div class="popular-tag">Più popolare</div>
-					<h3>Socio Sostenitore</h3>
-					<div class="price">50€/anno</div>
+					<h3>Membro Associato</h3>
+					<div class="price">10€/anno</div>
 					<ul>
-						<li>Sconto del 25% sui laboratori</li>
-						<li>Accesso prioritario agli eventi</li>
-						<li>Newsletter mensile</li>
-						<li>Workshop esclusivi gratuiti</li>
-						<li>Kit di benvenuto</li>
-						<li>Partecipazione all'assemblea dei soci</li>
+						<li>Accesso a tutti gli eventi</li>
+						<li>Sconti su eventi speciali</li>
+						<li>Possibilità di partecipare a eventi esclusivi per soci</li>
+						<li>Partecipazione attiva alle attività dell'associazione</li>
+
 					</ul>
 					<a href="#form" class="cta">Iscriviti</a>
 				</div>
 
-				<div class="membership-option">
-					<h3>Socio Giovane</h3>
-					<div class="price">15€/anno</div>
-					<div class="note">(fino a 25 anni)</div>
-					<ul>
-						<li>Sconto del 20% sui laboratori</li>
-						<li>Accesso a tutti gli eventi sociali</li>
-						<li>Newsletter mensile</li>
-						<li>Partecipazione all'assemblea dei soci</li>
-					</ul>
-					<a href="#form" class="cta">Iscriviti</a>
-				</div>
 			</div>
 		</section>
 
@@ -215,7 +194,7 @@
 			<p>Compila il modulo sottostante per richiedere l'iscrizione. Ti contatteremo al più presto con le
 				istruzioni per completare la procedura.</p>
 
-			<form action="#" method="POST" class="contact-form">
+			<form id="membership-form" class="contact-form">
 				<div class="form-group">
 					<label for="nome">Nome*</label>
 					<input type="text" id="nome" name="nome" required>
@@ -234,16 +213,6 @@
 				<div class="form-group">
 					<label for="telefono">Telefono</label>
 					<input type="tel" id="telefono" name="telefono">
-				</div>
-
-				<div class="form-group">
-					<label for="tipo-socio">Tipo di Socio*</label>
-					<select id="tipo-socio" name="tipo-socio" required>
-						<option value="">Seleziona una opzione</option>
-						<option value="ordinario">Socio Ordinario</option>
-						<option value="sostenitore">Socio Sostenitore</option>
-						<option value="giovane">Socio Giovane</option>
-					</select>
 				</div>
 
 				<div class="form-group">
@@ -314,11 +283,122 @@
 			</div>
 		</div>
 		<div class="footer-bottom">
-			<p>&copy; 2025 A.P.S. GRILLI IN TESTA | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
+			<p>&copy; 2025 A.P.S. GRILLI IN TESTA | <a href="privacy-policy.html">Privacy Policy</a>
 		</div>
 	</footer>
 
 	<script src="script.js"></script>
+	<script>
+		// Direct form handler - runs immediately after script.js is loaded
+		document.addEventListener('DOMContentLoaded', function () {
+			console.log('Direct form handler: DOM content loaded');
+
+			// Try to get the form directly
+			const membershipForm = document.getElementById('membership-form');
+			if (membershipForm) {
+				console.log('Direct form handler: Form found, attaching event listener');
+
+				membershipForm.addEventListener('submit', function (e) {
+					console.log('Direct form handler: Form submit triggered!');
+					e.preventDefault();
+
+					// Remove any existing success or error messages
+					const existingMessages = membershipForm.querySelectorAll('.submission-success, .submission-error');
+					existingMessages.forEach(message => message.remove());
+
+					// Create loading indicator
+					const submitButton = this.querySelector('button[type="submit"]');
+					const originalButtonText = submitButton.textContent;
+					submitButton.textContent = 'Invio in corso...';
+					submitButton.disabled = true;
+
+					// Collect form data
+					const formData = new FormData(this);
+
+					// Convert FormData to JSON object
+					const formDataObj = {};
+					formData.forEach((value, key) => {
+						// Convert checkbox "on" value to boolean true
+						if (key === 'privacy' && value === 'on') {
+							formDataObj[key] = true;
+						} else {
+							formDataObj[key] = value;
+						}
+						console.log(`Form field: ${key} = ${formDataObj[key]}`);
+					});
+
+					console.log('Sending form data to API:', formDataObj);
+
+					// Create and log the raw JSON body
+					const jsonBody = JSON.stringify({ data: formDataObj });
+					console.log('Raw JSON body being sent:', jsonBody);
+
+					// Send POST request to backend
+					fetch('http://localhost:1337/api/memberships', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							'Accept': 'application/json'
+						},
+						body: jsonBody,
+						mode: 'cors',
+						credentials: 'same-origin',
+						redirect: 'follow'
+					})
+						.then(response => {
+							console.log('API response received:', response);
+
+							// Check if response is not OK - log the full error response
+							if (!response.ok) {
+								// Clone the response to read it twice
+								return response.json().then(errorData => {
+									console.error('Full API error response:', errorData);
+									throw new Error('Errore di rete o del server');
+								});
+							}
+							return response.json();
+						})
+						.then(result => {
+							console.log('API success result:', result);
+							// Show success message
+							membershipForm.innerHTML = `
+							<div class="submission-success">
+							<i class="fas fa-check-circle"></i>
+							<h3>Richiesta inviata con successo!</h3>
+							<p>Grazie per il tuo interesse nell'associazione! Ti contatteremo presto per completare il processo di registrazione.</p>
+							</div>
+						`;
+
+							// Scroll to success message
+							membershipForm.scrollIntoView({ behavior: 'smooth' });
+						})
+						.catch(error => {
+							console.error('Error submitting form:', error);
+
+							// Reset button
+							submitButton.textContent = originalButtonText;
+							submitButton.disabled = false;
+
+							// Create error message
+							const errorDiv = document.createElement('div');
+							errorDiv.className = 'submission-error';
+							errorDiv.innerHTML = `
+							<i class="fas fa-exclamation-circle"></i>
+							<p>Si è verificato un errore nell'invio del modulo. Per favore riprova più tardi o contattaci direttamente via email.</p>
+						`;
+
+							// Add to the top of the form (after removing any existing error messages)
+							membershipForm.prepend(errorDiv);
+
+							// Scroll to error message
+							errorDiv.scrollIntoView({ behavior: 'smooth' });
+						});
+				});
+			} else {
+				console.error('Direct form handler: Form with ID "membership-form" not found!');
+			}
+		});
+	</script>
 </body>
 
 </html>

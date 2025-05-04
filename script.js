@@ -526,6 +526,98 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
+// Handle membership form submission
+function handleMembershipFormSubmit() {
+	console.log('Initializing membership form handler');
+	const membershipForm = document.getElementById('membership-form');
+
+	if (!membershipForm) {
+		console.error('Membership form not found! Selector not matching any element.');
+		return;
+	}
+
+	console.log('Membership form found, attaching event listener');
+
+	membershipForm.addEventListener('submit', function (e) {
+		console.log('Form submit event triggered!');
+		e.preventDefault();
+
+		// Remove any existing success or error messages
+		const existingMessages = membershipForm.querySelectorAll('.submission-success, .submission-error');
+		existingMessages.forEach(message => message.remove());
+
+		// Create loading indicator
+		const submitButton = this.querySelector('button[type="submit"]');
+		const originalButtonText = submitButton.textContent;
+		submitButton.textContent = 'Invio in corso...';
+		submitButton.disabled = true;
+
+		// Collect form data
+		const formData = new FormData(this);
+
+		// Convert FormData to JSON object
+		const formDataObj = {};
+		formData.forEach((value, key) => {
+			formDataObj[key] = value;
+			console.log(`Form field: ${key} = ${value}`);
+		});
+
+		console.log('Sending form data to API:', formDataObj);
+
+		// Send POST request to backend
+		fetch(`${API_BASE_URL}/api/memberships`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ data: formDataObj }),
+			redirect: 'follow'
+		})
+			.then(response => {
+				console.log('API response received:', response);
+				if (!response.ok) {
+					throw new Error('Errore di rete o del server');
+				}
+				return response.json();
+			})
+			.then(result => {
+				console.log('API success result:', result);
+				// Show success message
+				membershipForm.innerHTML = `
+        <div class="submission-success">
+          <i class="fas fa-check-circle"></i>
+          <h3>Richiesta inviata con successo!</h3>
+          <p>Grazie per il tuo interesse nell'associazione! Ti contatteremo presto per completare il processo di registrazione.</p>
+        </div>
+      `;
+
+				// Scroll to success message
+				membershipForm.scrollIntoView({ behavior: 'smooth' });
+			})
+			.catch(error => {
+				console.error('Error submitting form:', error);
+
+				// Reset button
+				submitButton.textContent = originalButtonText;
+				submitButton.disabled = false;
+
+				// Create error message
+				const errorDiv = document.createElement('div');
+				errorDiv.className = 'submission-error';
+				errorDiv.innerHTML = `
+        <i class="fas fa-exclamation-circle"></i>
+        <p>Si è verificato un errore nell'invio del modulo. Per favore riprova più tardi o contattaci direttamente via email.</p>
+      `;
+
+				// Add to the top of the form
+				membershipForm.prepend(errorDiv);
+
+				// Scroll to error message
+				errorDiv.scrollIntoView({ behavior: 'smooth' });
+			});
+	});
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	w3IncludeHTML();
 
@@ -570,8 +662,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Handle single article page if needed
 			fetchAndDisplaySingleArticle();
 
-			// Initialize news page filters if we're on the news page
-			// Moved into displayArticles function after loading articles
+			// Initialize membership form submission handler
+			handleMembershipFormSubmit();
 
 			// Handle page load transitions
 			handlePageLoad();
@@ -905,7 +997,7 @@ function displayHomeEvents(events) {
 	viewAllButton.className = 'view-all-button';
 	viewAllButton.innerHTML = '<a href="eventi.html" class="cta">Vedi tutti gli eventi</a>';
 
-	// Add elements to the slider
-	eventsSlider.appendChild(eventsContainer);
-	eventsSlider.appendChild(viewAllButton);
-}
+		// Add elements to the slider
+		eventsSlider.appendChild(eventsContainer);
+		eventsSlider.appendChild(viewAllButton);
+	}
