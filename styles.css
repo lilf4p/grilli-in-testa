@@ -150,61 +150,62 @@ header {
 /* Form Success and Error Message Styles */
 .submission-success,
 .submission-error {
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  animation: fadeInSlide 0.5s ease-in-out;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    animation: fadeInSlide 0.5s ease-in-out;
 }
 
 .submission-success {
-  background-color: rgba(44, 171, 102, 0.1);
-  border-left: 4px solid rgba(44, 171, 102, 1);
-  color: #155724;
+    background-color: rgba(44, 171, 102, 0.1);
+    border-left: 4px solid rgba(44, 171, 102, 1);
+    color: #155724;
 }
 
 .submission-error {
-  background-color: #fff2f2;
-  border-left: 4px solid #dc3545;
-  color: #721c24;
+    background-color: #fff2f2;
+    border-left: 4px solid #dc3545;
+    color: #721c24;
 }
 
 .submission-success i,
 .submission-error i {
-  font-size: 2rem;
-  margin-right: 15px;
+    font-size: 2rem;
+    margin-right: 15px;
 }
 
 .submission-success i {
-  color: rgba(44, 171, 102, 1);
+    color: rgba(44, 171, 102, 1);
 }
 
 .submission-error i {
-  color: #dc3545;
+    color: #dc3545;
 }
 
 .submission-success h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-family: 'Saira Semi Condensed', sans-serif;
-  color: rgba(44, 171, 102, 1);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    color: rgba(44, 171, 102, 1);
 }
 
 .submission-success p,
 .submission-error p {
-  margin: 0;
+    margin: 0;
 }
 
 @keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design */
@@ -1476,8 +1477,10 @@ body.modal-open {
 }
 
 .benefit-card {
-    flex: 0 0 260px; /* Fixed width of 300px */
-    height: 260px; /* Fixed height of 300px */
+    flex: 0 0 260px;
+    /* Fixed width of 300px */
+    height: 260px;
+    /* Fixed height of 300px */
     background: white;
     padding: 2rem;
     border-radius: 8px;
